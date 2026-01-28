@@ -17,14 +17,15 @@
         
         /* 卡片互動特效 */
         .tool-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none !important; /* 強制移除邊框 */
         }
         
         @media (hover: hover) {
             .tool-card:hover {
                 transform: translateY(-5px);
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-                filter: brightness(1.05); /* 懸浮時稍微變亮 */
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+                filter: brightness(1.08); /* 懸浮時稍微變亮 */
             }
         }
         
@@ -72,7 +73,9 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-6">
 
-            <a href="https://kuantahung.github.io/Retire-in-Real/" target="_blank" class="tool-card col-span-1 md:col-span-2 lg:col-span-8 group relative overflow-hidden rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between min-h-[260px] md:min-h-[280px] bg-gradient-to-br from-blue-500 to-cyan-600 text-white">
+            <a href="https://kuantahung.github.io/Retire-in-Real/" target="_blank" 
+               class="tool-card col-span-1 md:col-span-2 lg:col-span-8 group relative overflow-hidden rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between min-h-[260px] md:min-h-[280px]"
+               style="background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%); color: white;">
                 
                 <div class="absolute top-0 right-0 -mt-4 -mr-4 w-40 h-40 bg-white rounded-full blur-3xl opacity-20 bg-icon"></div>
                 
@@ -93,7 +96,10 @@
                 </div>
             </a>
 
-            <a href="https://kuantahung.github.io/USD-exchange-rate-history/" target="_blank" class="tool-card col-span-1 md:col-span-1 lg:col-span-4 rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between text-white relative overflow-hidden bg-gradient-to-br from-slate-800 to-blue-900">
+            <a href="https://kuantahung.github.io/USD-exchange-rate-history/" target="_blank" 
+               class="tool-card col-span-1 md:col-span-1 lg:col-span-4 rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between relative overflow-hidden group"
+               style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: white;">
+               
                 <i class="fa-solid fa-money-bill-trend-up absolute -bottom-6 -right-6 text-8xl md:text-9xl text-white opacity-10 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
                 
                 <div class="relative z-10">
@@ -112,7 +118,10 @@
                 </div>
             </a>
 
-            <a href="https://kuantahung.github.io/RBC-dashboard/" target="_blank" class="tool-card col-span-1 md:col-span-1 lg:col-span-6 group p-5 md:p-6 rounded-2xl shadow-md border border-emerald-500/20 relative overflow-hidden bg-gradient-to-br from-emerald-500 to-teal-600 text-white">
+            <a href="https://kuantahung.github.io/RBC-dashboard/" target="_blank" 
+               class="tool-card col-span-1 md:col-span-1 lg:col-span-6 group p-5 md:p-6 rounded-2xl shadow-md relative overflow-hidden"
+               style="background: linear-gradient(135deg, #10b981 0%, #0d9488 100%); color: white;">
+               
                 <i class="fa-solid fa-shield-halved absolute -bottom-6 -right-4 text-8xl md:text-9xl text-white opacity-20 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
                 
                 <div class="relative z-10 flex items-start space-x-3 md:space-x-4">
@@ -129,7 +138,10 @@
                 </div>
             </a>
 
-            <a href="https://kuantahung.github.io/demographic-changes/" target="_blank" class="tool-card col-span-1 md:col-span-2 lg:col-span-6 group p-5 md:p-6 rounded-2xl shadow-md border border-orange-500/20 relative overflow-hidden bg-gradient-to-br from-orange-400 to-red-500 text-white">
+            <a href="https://kuantahung.github.io/demographic-changes/" target="_blank" 
+               class="tool-card col-span-1 md:col-span-2 lg:col-span-6 group p-5 md:p-6 rounded-2xl shadow-md relative overflow-hidden"
+               style="background: linear-gradient(135deg, #f97316 0%, #ef4444 100%); color: white;">
+               
                 <i class="fa-solid fa-chart-area absolute -bottom-4 -right-2 text-8xl md:text-9xl text-white opacity-20 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
                 
                 <div class="relative z-10 flex items-start space-x-3 md:space-x-4">

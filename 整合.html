@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倍安保險數位工具箱</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f8fafc; /* 稍微調整背景色，更潔淨 */
+        }
+        /* 卡片懸浮特效 */
+        .hover-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        /* 倍安品牌色調建議：使用沈穩的深藍色系 */
+        .bg-gradient-brand {
+            background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col text-slate-800">
+
+    <nav class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center text-white mr-3 shadow-sm">
+                        <i class="fa-solid fa-shield-cat text-xl"></i>
+                    </div>
+                    <span class="font-bold text-xl text-slate-800 tracking-wide">倍安保險數位工具箱</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-sm font-medium text-slate-500 bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
+                        <i class="fa-solid fa-crosshairs text-blue-600 mr-2"></i>專業賦能、精準分析
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+        
+        <div class="mb-10 text-center md:text-left">
+            <h1 class="text-3xl font-bold text-slate-900 mb-2">數位賦能中心</h1>
+            <p class="text-slate-500">透過數據與科技，為客戶量身打造最穩健的財務護盾。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+            <a href="https://kuantahung.github.io/Retire-in-Real/" target="_blank" class="col-span-1 md:col-span-8 group relative overflow-hidden rounded-2xl bg-white p-8 shadow-sm border border-slate-200 hover-card flex flex-col justify-between min-h-[280px]">
+                <div class="absolute top-0 right-0 -mt-4 -mr-4 w-40 h-40 bg-blue-50 rounded-full blur-3xl opacity-60"></div>
+                
+                <div class="relative z-10">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="px-3 py-1 text-xs font-bold text-blue-700 bg-blue-50 rounded-full border border-blue-100">CORE TOOL</span>
+                        <span class="px-3 py-1 text-xs font-medium text-slate-500 bg-slate-100 rounded-full">退休規劃首選</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">Retire in Real 退休實境模擬</h2>
+                    <p class="text-slate-600 text-lg max-w-2xl leading-relaxed">
+                        協助客戶視覺化退休金缺口。透過具體的數據運算，讓「未來的需求」現在就被看見，精準規劃理想的老後生活。
+                    </p>
+                </div>
+                
+                <div class="relative z-10 mt-8 flex items-center text-blue-700 font-bold group-hover:translate-x-2 transition-transform">
+                    <span>啟動模擬分析</span>
+                    <i class="fa-solid fa-arrow-right-long ml-2"></i>
+                </div>
+            </a>
+
+            <a href="https://kuantahung.github.io/USD-exchange-rate-history/" target="_blank" class="col-span-1 md:col-span-4 bg-gradient-brand rounded-2xl p-8 shadow-md hover-card flex flex-col justify-between text-white relative overflow-hidden group">
+                <i class="fa-solid fa-money-bill-trend-up absolute -bottom-6 -right-6 text-9xl text-white opacity-10 group-hover:scale-110 transition-transform duration-500"></i>
+                
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="px-3 py-1 text-xs font-bold text-blue-900 bg-blue-100 rounded-full">MARKET</span>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-3">美元匯率歷史走勢</h2>
+                    <p class="text-blue-100 leading-relaxed text-sm">
+                        掌握匯率波段，為外幣保單尋找最佳進場點。用客觀歷史數據，化解客戶對匯差的擔憂。
+                    </p>
+                </div>
+                
+                <div class="mt-6 flex items-center font-semibold bg-white/10 w-fit px-4 py-2 rounded-lg backdrop-blur-md hover:bg-white/20 transition-colors border border-white/10">
+                    <span>查看走勢</span>
+                    <i class="fa-solid fa-chart-line ml-2"></i>
+                </div>
+            </a>
+
+            <a href="https://kuantahung.github.io/RBC-dashboard/" target="_blank" class="col-span-1 md:col-span-6 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover-card flex items-start space-x-4 group">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl border border-emerald-100 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-1">保險公司 RBC 儀表板</h3>
+                    <p class="text-sm text-slate-500 mb-3">查詢各家壽險業資本適足率，以專業數據把關，確保客戶權益無虞。</p>
+                    <span class="text-emerald-600 text-sm font-bold flex items-center group-hover:text-emerald-700">
+                        查詢數據 <i class="fa-solid fa-chevron-right text-xs ml-1"></i>
+                    </span>
+                </div>
+            </a>
+
+            <a href="https://kuantahung.github.io/demographic-changes/" target="_blank" class="col-span-1 md:col-span-6 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover-card flex items-start space-x-4 group">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center text-xl border border-orange-100 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-people-roof"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-1">台灣人口結構變遷</h3>
+                    <p class="text-sm text-slate-500 mb-3">透過少子化與高齡化趨勢圖，強化長照與醫療規劃的急迫性與必要性。</p>
+                    <span class="text-orange-600 text-sm font-bold flex items-center group-hover:text-orange-700">
+                        展示圖表 <i class="fa-solid fa-chevron-right text-xs ml-1"></i>
+                    </span>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between text-sm text-slate-400">
+            <div class="mb-4 md:mb-0">
+                <p>&copy; 2026 Polaris Financial Group. Designed for Excellence.</p>
+            </div>
+            <div class="flex space-x-6">
+                <span class="hover:text-slate-600 cursor-pointer">內部使用</span>
+                <span class="hover:text-slate-600 cursor-pointer">隱私權政策</span>
+                <span class="hover:text-slate-600 cursor-pointer">聯絡資訊</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

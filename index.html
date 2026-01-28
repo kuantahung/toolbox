@@ -24,8 +24,8 @@
         @media (hover: hover) {
             .tool-card:hover {
                 transform: translateY(-5px);
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-                filter: brightness(1.08); /* 懸浮時稍微變亮 */
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
+                filter: brightness(1.05); /* 懸浮時稍微變亮 */
             }
         }
         
@@ -33,9 +33,10 @@
             transform: scale(0.98);
         }
 
-        /* 背景圖示不干擾點擊 */
+        /* 背景圖示設定 */
         .bg-icon {
             pointer-events: none;
+            mix-blend-mode: overlay; /* 讓圖示與背景融合得更自然 */
         }
     </style>
 </head>
@@ -77,14 +78,10 @@
                class="tool-card col-span-1 md:col-span-2 lg:col-span-8 group relative overflow-hidden rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between min-h-[260px] md:min-h-[280px]"
                style="background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%); color: white;">
                 
-                <i class="fa-solid fa-umbrella-beach absolute -bottom-4 -right-4 text-8xl md:text-9xl text-white opacity-40 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
+                <i class="fa-solid fa-umbrella-beach absolute -bottom-6 -right-6 text-9xl md:text-[10rem] text-white opacity-50 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
                 
-                <div class="relative z-10">
-                    <div class="flex items-center space-x-2 mb-3 md:mb-4">
-                        <span class="px-2 py-1 text-[10px] md:text-xs font-bold text-white bg-white/20 rounded-full backdrop-blur-sm border border-white/20">CORE TOOL</span>
-                        <span class="px-2 py-1 text-[10px] md:text-xs font-medium text-blue-50 bg-blue-900/30 rounded-full">退休首選</span>
-                    </div>
-                    <h2 class="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-white">Retire in Real 退休實境</h2>
+                <div class="relative z-10 pt-2">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-3 text-white">Retire in Real 退休實境</h2>
                     <p class="text-blue-50 text-sm md:text-lg max-w-2xl leading-relaxed font-light">
                         視覺化退休金缺口。讓客戶看見未來的需求，精準規劃理想老後生活。
                     </p>
@@ -100,13 +97,10 @@
                class="tool-card col-span-1 md:col-span-1 lg:col-span-4 rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between relative overflow-hidden group"
                style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: white;">
                
-                <i class="fa-solid fa-money-bill-trend-up absolute -bottom-6 -right-6 text-8xl md:text-9xl text-white opacity-10 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
+                <i class="fa-solid fa-money-bill-trend-up absolute -bottom-6 -right-6 text-8xl md:text-9xl text-white opacity-30 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
                 
-                <div class="relative z-10">
-                    <div class="flex items-center space-x-2 mb-3 md:mb-4">
-                        <span class="px-2 py-1 text-[10px] md:text-xs font-bold text-white bg-white/20 rounded-full backdrop-blur-sm border border-white/20">MARKET</span>
-                    </div>
-                    <h2 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-white">美元匯率歷史走勢</h2>
+                <div class="relative z-10 pt-2">
+                    <h2 class="text-xl md:text-2xl font-bold mb-3 text-white">美元匯率歷史走勢</h2>
                     <p class="text-slate-200 text-xs md:text-sm leading-relaxed font-light">
                         掌握匯率波段，用歷史數據化解客戶對匯差的疑慮。
                     </p>
@@ -120,7 +114,7 @@
 
             <a href="https://kuantahung.github.io/RBC-dashboard/" target="_blank" 
                class="tool-card col-span-1 md:col-span-1 lg:col-span-6 group p-5 md:p-6 rounded-2xl shadow-md relative overflow-hidden"
-               style="background: linear-gradient(135deg, #10b981 0%, #0d9488 100%); color: white;">
+               style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white;">
                
                 <i class="fa-solid fa-shield-halved absolute -bottom-6 -right-4 text-8xl md:text-9xl text-white opacity-20 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
                 
@@ -140,7 +134,7 @@
 
             <a href="https://kuantahung.github.io/demographic-changes/" target="_blank" 
                class="tool-card col-span-1 md:col-span-2 lg:col-span-6 group p-5 md:p-6 rounded-2xl shadow-md relative overflow-hidden"
-               style="background: linear-gradient(135deg, #f97316 0%, #ef4444 100%); color: white;">
+               style="background: linear-gradient(135deg, #ea580c 0%, #f97316 100%); color: white;">
                
                 <i class="fa-solid fa-chart-area absolute -bottom-4 -right-2 text-8xl md:text-9xl text-white opacity-20 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
                 

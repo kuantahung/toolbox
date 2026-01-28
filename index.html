@@ -37,6 +37,11 @@
         .bg-gradient-brand {
             background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
         }
+        
+        /* 確保背景圖示不會阻擋滑鼠點擊 */
+        .bg-icon {
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col text-slate-800 pb-safe">
@@ -74,8 +79,8 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-6">
 
             <a href="https://kuantahung.github.io/Retire-in-Real/" target="_blank" class="tool-card col-span-1 md:col-span-2 lg:col-span-8 group relative overflow-hidden rounded-2xl bg-white p-6 md:p-8 shadow-sm border border-slate-200 flex flex-col justify-between min-h-[260px] md:min-h-[280px]">
-                <div class="absolute top-0 right-0 -mt-4 -mr-4 w-32 h-32 md:w-40 md:h-40 bg-blue-50 rounded-full blur-3xl opacity-60 z-0"></div>
-                <i class="fa-solid fa-umbrella-beach absolute -bottom-8 -right-8 text-9xl md:text-[10rem] text-blue-100 opacity-50 group-hover:scale-105 transition-transform duration-500 z-0"></i>
+                <div class="absolute top-0 right-0 -mt-4 -mr-4 w-32 h-32 md:w-40 md:h-40 bg-blue-50 rounded-full blur-3xl opacity-60 z-0 bg-icon"></div>
+                <i class="fa-solid fa-umbrella-beach absolute -bottom-8 -right-8 text-9xl md:text-[10rem] text-blue-200 opacity-40 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
                 
                 <div class="relative z-10">
                     <div class="flex items-center space-x-2 mb-3 md:mb-4">
@@ -95,7 +100,7 @@
             </a>
 
             <a href="https://kuantahung.github.io/USD-exchange-rate-history/" target="_blank" class="tool-card col-span-1 md:col-span-1 lg:col-span-4 bg-gradient-brand rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between text-white relative overflow-hidden group">
-                <i class="fa-solid fa-money-bill-trend-up absolute -bottom-6 -right-6 text-8xl md:text-9xl text-white opacity-10 group-hover:scale-110 transition-transform duration-500 z-0"></i>
+                <i class="fa-solid fa-money-bill-trend-up absolute -bottom-6 -right-6 text-8xl md:text-9xl text-white opacity-10 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
                 
                 <div class="relative z-10">
                     <div class="flex items-center space-x-2 mb-3 md:mb-4">
@@ -114,7 +119,7 @@
             </a>
 
             <a href="https://kuantahung.github.io/RBC-dashboard/" target="_blank" class="tool-card col-span-1 md:col-span-1 lg:col-span-6 group bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
-                <i class="fa-solid fa-shield-halved absolute -bottom-6 -right-4 text-8xl md:text-9xl text-emerald-100 opacity-40 group-hover:scale-105 transition-transform duration-500 z-0"></i>
+                <i class="fa-solid fa-shield-halved absolute -bottom-6 -right-4 text-8xl md:text-9xl text-emerald-200 opacity-30 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
                 
                 <div class="relative z-10 flex items-start space-x-3 md:space-x-4">
                     <div class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg md:text-xl border border-emerald-100 shadow-sm">
@@ -131,7 +136,7 @@
             </a>
 
             <a href="https://kuantahung.github.io/demographic-changes/" target="_blank" class="tool-card col-span-1 md:col-span-2 lg:col-span-6 group bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
-                <i class="fa-solid fa-chart-area absolute -bottom-4 -right-2 text-8xl md:text-9xl text-orange-100 opacity-40 group-hover:scale-105 transition-transform duration-500 z-0"></i>
+                <i class="fa-solid fa-chart-area absolute -bottom-4 -right-2 text-8xl md:text-9xl text-orange-200 opacity-30 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
                 
                 <div class="relative z-10 flex items-start space-x-3 md:space-x-4">
                     <div class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center text-lg md:text-xl border border-orange-100 shadow-sm">

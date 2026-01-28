@@ -11,34 +11,28 @@
     <style>
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: #f1f5f9;
-            /* 防止 iOS 點擊時產生藍色背景 */
+            background-color: #f8fafc;
             -webkit-tap-highlight-color: transparent;
         }
         
-        /* 優化卡片互動 */
+        /* 卡片互動特效 */
         .tool-card {
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        /* 滑鼠懸停特效 (僅限電腦版) */
         @media (hover: hover) {
             .tool-card:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+                transform: translateY(-5px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                filter: brightness(1.05); /* 懸浮時稍微變亮 */
             }
         }
         
-        /* 手機觸控點擊特效 (Active State) */
         .tool-card:active {
             transform: scale(0.98);
         }
 
-        .bg-gradient-brand {
-            background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
-        }
-        
-        /* 確保背景圖示不會阻擋滑鼠點擊 */
+        /* 背景圖示不干擾點擊 */
         .bg-icon {
             pointer-events: none;
         }
@@ -78,74 +72,75 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-6">
 
-            <a href="https://kuantahung.github.io/Retire-in-Real/" target="_blank" class="tool-card col-span-1 md:col-span-2 lg:col-span-8 group relative overflow-hidden rounded-2xl bg-white p-6 md:p-8 shadow-sm border border-slate-200 flex flex-col justify-between min-h-[260px] md:min-h-[280px]">
-                <div class="absolute top-0 right-0 -mt-4 -mr-4 w-32 h-32 md:w-40 md:h-40 bg-blue-50 rounded-full blur-3xl opacity-60 z-0 bg-icon"></div>
+            <a href="https://kuantahung.github.io/Retire-in-Real/" target="_blank" class="tool-card col-span-1 md:col-span-2 lg:col-span-8 group relative overflow-hidden rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between min-h-[260px] md:min-h-[280px] bg-gradient-to-br from-blue-500 to-cyan-600 text-white">
+                
+                <div class="absolute top-0 right-0 -mt-4 -mr-4 w-40 h-40 bg-white rounded-full blur-3xl opacity-20 bg-icon"></div>
                 
                 <div class="relative z-10">
                     <div class="flex items-center space-x-2 mb-3 md:mb-4">
-                        <span class="px-2 py-1 text-[10px] md:text-xs font-bold text-blue-700 bg-blue-50 rounded-full border border-blue-100">CORE TOOL</span>
-                        <span class="px-2 py-1 text-[10px] md:text-xs font-medium text-slate-500 bg-slate-100 rounded-full">退休首選</span>
+                        <span class="px-2 py-1 text-[10px] md:text-xs font-bold text-white bg-white/20 rounded-full backdrop-blur-sm border border-white/20">CORE TOOL</span>
+                        <span class="px-2 py-1 text-[10px] md:text-xs font-medium text-blue-50 bg-blue-900/30 rounded-full">退休首選</span>
                     </div>
-                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2 md:mb-3">Retire in Real 退休實境</h2>
-                    <p class="text-slate-600 text-sm md:text-lg max-w-2xl leading-relaxed">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-white">Retire in Real 退休實境</h2>
+                    <p class="text-blue-50 text-sm md:text-lg max-w-2xl leading-relaxed font-light">
                         視覺化退休金缺口。讓客戶看見未來的需求，精準規劃理想老後生活。
                     </p>
                 </div>
                 
-                <div class="relative z-10 mt-6 md:mt-8 flex items-center text-blue-700 font-bold text-sm md:text-base">
+                <div class="relative z-10 mt-6 md:mt-8 flex items-center text-white font-bold text-sm md:text-base">
                     <span>啟動模擬</span>
                     <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-2 transition-transform"></i>
                 </div>
             </a>
 
-            <a href="https://kuantahung.github.io/USD-exchange-rate-history/" target="_blank" class="tool-card col-span-1 md:col-span-1 lg:col-span-4 bg-gradient-brand rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between text-white relative overflow-hidden group">
+            <a href="https://kuantahung.github.io/USD-exchange-rate-history/" target="_blank" class="tool-card col-span-1 md:col-span-1 lg:col-span-4 rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between text-white relative overflow-hidden bg-gradient-to-br from-slate-800 to-blue-900">
                 <i class="fa-solid fa-money-bill-trend-up absolute -bottom-6 -right-6 text-8xl md:text-9xl text-white opacity-10 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
                 
                 <div class="relative z-10">
                     <div class="flex items-center space-x-2 mb-3 md:mb-4">
-                        <span class="px-2 py-1 text-[10px] md:text-xs font-bold text-blue-900 bg-blue-100 rounded-full">MARKET</span>
+                        <span class="px-2 py-1 text-[10px] md:text-xs font-bold text-white bg-white/20 rounded-full backdrop-blur-sm border border-white/20">MARKET</span>
                     </div>
-                    <h2 class="text-xl md:text-2xl font-bold mb-2 md:mb-3">美元匯率歷史走勢</h2>
-                    <p class="text-blue-100 text-xs md:text-sm leading-relaxed">
+                    <h2 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-white">美元匯率歷史走勢</h2>
+                    <p class="text-slate-200 text-xs md:text-sm leading-relaxed font-light">
                         掌握匯率波段，用歷史數據化解客戶對匯差的疑慮。
                     </p>
                 </div>
                 
-                <div class="relative z-10 mt-4 md:mt-6 flex items-center font-semibold bg-white/10 w-fit px-3 py-2 md:px-4 rounded-lg backdrop-blur-md border border-white/10 text-xs md:text-sm">
+                <div class="relative z-10 mt-4 md:mt-6 flex items-center font-semibold bg-white/10 w-fit px-3 py-2 md:px-4 rounded-lg backdrop-blur-md border border-white/10 text-xs md:text-sm hover:bg-white/20 transition-colors">
                     <span>查看走勢</span>
                     <i class="fa-solid fa-chart-line ml-2"></i>
                 </div>
             </a>
 
-            <a href="https://kuantahung.github.io/RBC-dashboard/" target="_blank" class="tool-card col-span-1 md:col-span-1 lg:col-span-6 group bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
-                <i class="fa-solid fa-shield-halved absolute -bottom-6 -right-4 text-8xl md:text-9xl text-emerald-200 opacity-30 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
+            <a href="https://kuantahung.github.io/RBC-dashboard/" target="_blank" class="tool-card col-span-1 md:col-span-1 lg:col-span-6 group p-5 md:p-6 rounded-2xl shadow-md border border-emerald-500/20 relative overflow-hidden bg-gradient-to-br from-emerald-500 to-teal-600 text-white">
+                <i class="fa-solid fa-shield-halved absolute -bottom-6 -right-4 text-8xl md:text-9xl text-white opacity-20 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
                 
                 <div class="relative z-10 flex items-start space-x-3 md:space-x-4">
-                    <div class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg md:text-xl border border-emerald-100 shadow-sm">
-                        <i class="fa-solid fa-shield-halved"></i>
+                    <div class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/20 flex items-center justify-center text-lg md:text-xl border border-white/20 backdrop-blur-sm">
+                        <i class="fa-solid fa-shield-halved text-white"></i>
                     </div>
                     <div>
-                        <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-1">保險公司 RBC 儀表板</h3>
-                        <p class="text-xs md:text-sm text-slate-500 mb-2 leading-relaxed">查詢各家壽險業資本適足率，專業數據把關。</p>
-                        <span class="text-emerald-600 text-xs md:text-sm font-bold flex items-center group-hover:text-emerald-700">
-                            查詢數據 <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i>
+                        <h3 class="text-lg md:text-xl font-bold mb-1 text-white">保險公司 RBC 儀表板</h3>
+                        <p class="text-xs md:text-sm text-emerald-50 mb-2 leading-relaxed font-light">查詢各家壽險業資本適足率，專業數據把關。</p>
+                        <span class="text-white text-xs md:text-sm font-bold flex items-center">
+                            查詢數據 <i class="fa-solid fa-chevron-right text-[10px] ml-1 opacity-70"></i>
                         </span>
                     </div>
                 </div>
             </a>
 
-            <a href="https://kuantahung.github.io/demographic-changes/" target="_blank" class="tool-card col-span-1 md:col-span-2 lg:col-span-6 group bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
-                <i class="fa-solid fa-chart-area absolute -bottom-4 -right-2 text-8xl md:text-9xl text-orange-200 opacity-30 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
+            <a href="https://kuantahung.github.io/demographic-changes/" target="_blank" class="tool-card col-span-1 md:col-span-2 lg:col-span-6 group p-5 md:p-6 rounded-2xl shadow-md border border-orange-500/20 relative overflow-hidden bg-gradient-to-br from-orange-400 to-red-500 text-white">
+                <i class="fa-solid fa-chart-area absolute -bottom-4 -right-2 text-8xl md:text-9xl text-white opacity-20 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
                 
                 <div class="relative z-10 flex items-start space-x-3 md:space-x-4">
-                    <div class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center text-lg md:text-xl border border-orange-100 shadow-sm">
-                        <i class="fa-solid fa-people-roof"></i>
+                    <div class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/20 flex items-center justify-center text-lg md:text-xl border border-white/20 backdrop-blur-sm">
+                        <i class="fa-solid fa-people-roof text-white"></i>
                     </div>
                     <div>
-                        <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-1">台灣人口結構變遷</h3>
-                        <p class="text-xs md:text-sm text-slate-500 mb-2 leading-relaxed">透過少子化與高齡化數據，強化規劃急迫性。</p>
-                        <span class="text-orange-600 text-xs md:text-sm font-bold flex items-center group-hover:text-orange-700">
-                            展示圖表 <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i>
+                        <h3 class="text-lg md:text-xl font-bold mb-1 text-white">台灣人口結構變遷</h3>
+                        <p class="text-xs md:text-sm text-orange-50 mb-2 leading-relaxed font-light">透過少子化與高齡化數據，強化規劃急迫性。</p>
+                        <span class="text-white text-xs md:text-sm font-bold flex items-center">
+                            展示圖表 <i class="fa-solid fa-chevron-right text-[10px] ml-1 opacity-70"></i>
                         </span>
                     </div>
                 </div>

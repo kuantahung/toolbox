@@ -37,6 +37,16 @@
         .bg-icon {
             pointer-events: none;
         }
+
+        /* 閃爍動畫 (用於即時匯率更新) */
+        @keyframes pulse-green {
+            0% { color: white; }
+            50% { color: #86efac; }
+            100% { color: white; }
+        }
+        .live-update {
+            animation: pulse-green 2s infinite;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col text-slate-800 pb-safe">
@@ -92,62 +102,80 @@
                 </div>
             </a>
 
+            <a href="https://rate.bot.com.tw/xrt" target="_blank" 
+               class="tool-card col-span-1 md:col-span-1 lg:col-span-4 rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between relative overflow-hidden group"
+               style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: white;">
+                
+                <i class="fa-solid fa-sack-dollar absolute -bottom-6 -right-6 text-8xl md:text-9xl text-white opacity-20 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
+                
+                <div class="relative z-10">
+                    <div class="flex justify-between items-start">
+                        <h2 class="text-lg md:text-xl font-bold text-white opacity-90">今日美金匯率</h2>
+                        <span class="bg-white/20 text-[10px] px-2 py-1 rounded backdrop-blur-sm">臺灣銀行</span>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <p class="text-xs text-purple-200 mb-1">現金賣出 (Cash Sell)</p>
+                        <div class="flex items-baseline">
+                            <span id="live-rate" class="text-4xl md:text-5xl font-bold text-white tracking-tight">--.--</span>
+                            <span class="ml-2 text-sm font-medium text-purple-200">TWD</span>
+                        </div>
+                        <p id="update-time" class="text-[10px] text-purple-300 mt-2 flex items-center">
+                            <i class="fa-solid fa-circle-notch fa-spin mr-1"></i> 數據載入中...
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="relative z-10 mt-4 flex items-center text-xs font-semibold text-purple-100/80 group-hover:text-white transition-colors">
+                    <span>前往台銀公告</span>
+                    <i class="fa-solid fa-external-link-alt ml-1"></i>
+                </div>
+            </a>
+
             <a href="https://kuantahung.github.io/USD-exchange-rate-history/" target="_blank" 
                class="tool-card col-span-1 md:col-span-1 lg:col-span-4 rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between relative overflow-hidden group"
                style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: white;">
-               
-                <i class="fa-solid fa-money-bill-trend-up absolute -bottom-6 -right-6 text-8xl md:text-9xl text-white opacity-30 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
                 
-                <div class="relative z-10 pt-4">
-                    <h2 class="text-xl md:text-2xl font-bold mb-3 text-white">美元匯率歷史走勢</h2>
-                    <p class="text-slate-200 text-xs md:text-sm leading-relaxed font-light">
-                        掌握匯率波段，用歷史數據化解客戶對匯差的疑慮。
+                <i class="fa-solid fa-chart-line absolute -bottom-6 -right-6 text-8xl md:text-9xl text-white opacity-30 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
+                
+                <div class="relative z-10">
+                    <h2 class="text-lg md:text-xl font-bold mb-2 text-white">50年匯率走勢</h2>
+                    <p class="text-slate-200 text-xs md:text-sm leading-relaxed font-light mb-4">
+                        用歷史大數據化解客戶對匯差的疑慮。
                     </p>
-                </div>
-                
-                <div class="relative z-10 mt-4 md:mt-6 flex items-center font-semibold bg-white/10 w-fit px-3 py-2 md:px-4 rounded-lg backdrop-blur-md border border-white/10 text-xs md:text-sm hover:bg-white/20 transition-colors">
-                    <span>查看走勢</span>
-                    <i class="fa-solid fa-chart-line ml-2"></i>
+                    <span class="bg-white/10 px-3 py-1.5 rounded-lg text-xs backdrop-blur-md border border-white/10">
+                        查看歷史圖表
+                    </span>
                 </div>
             </a>
 
             <a href="https://kuantahung.github.io/RBC-dashboard/" target="_blank" 
-               class="tool-card col-span-1 md:col-span-1 lg:col-span-6 group p-5 md:p-6 rounded-2xl shadow-md relative overflow-hidden"
+               class="tool-card col-span-1 md:col-span-1 lg:col-span-4 group p-6 rounded-2xl shadow-md relative overflow-hidden flex flex-col justify-between"
                style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white;">
-               
+                
                 <i class="fa-solid fa-shield-halved absolute -bottom-6 -right-4 text-8xl md:text-9xl text-white opacity-20 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
                 
-                <div class="relative z-10 flex items-start space-x-3 md:space-x-4">
-                    <div class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/20 flex items-center justify-center text-lg md:text-xl border border-white/20 backdrop-blur-sm">
-                        <i class="fa-solid fa-shield-halved text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg md:text-xl font-bold mb-1 text-white">保險公司 RBC 儀表板</h3>
-                        <p class="text-xs md:text-sm text-emerald-50 mb-2 leading-relaxed font-light">查詢各家壽險業資本適足率，專業數據把關。</p>
-                        <span class="text-white text-xs md:text-sm font-bold flex items-center">
-                            查詢數據 <i class="fa-solid fa-chevron-right text-[10px] ml-1 opacity-70"></i>
-                        </span>
-                    </div>
+                <div class="relative z-10">
+                    <h3 class="text-lg md:text-xl font-bold mb-2 text-white">RBC 查詢儀表板</h3>
+                    <p class="text-xs md:text-sm text-emerald-50 mb-4 leading-relaxed font-light">各家壽險業資本適足率。</p>
+                    <span class="bg-white/10 px-3 py-1.5 rounded-lg text-xs backdrop-blur-md border border-white/10">
+                        檢視數據
+                    </span>
                 </div>
             </a>
 
             <a href="https://kuantahung.github.io/demographic-changes/" target="_blank" 
-               class="tool-card col-span-1 md:col-span-2 lg:col-span-6 group p-5 md:p-6 rounded-2xl shadow-md relative overflow-hidden"
+               class="tool-card col-span-1 md:col-span-1 lg:col-span-4 group p-6 rounded-2xl shadow-md relative overflow-hidden flex flex-col justify-between"
                style="background: linear-gradient(135deg, #ea580c 0%, #f97316 100%); color: white;">
-               
-                <i class="fa-solid fa-chart-area absolute -bottom-4 -right-2 text-8xl md:text-9xl text-white opacity-20 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
                 
-                <div class="relative z-10 flex items-start space-x-3 md:space-x-4">
-                    <div class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/20 flex items-center justify-center text-lg md:text-xl border border-white/20 backdrop-blur-sm">
-                        <i class="fa-solid fa-people-roof text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg md:text-xl font-bold mb-1 text-white">台灣人口結構變遷</h3>
-                        <p class="text-xs md:text-sm text-orange-50 mb-2 leading-relaxed font-light">透過少子化與高齡化數據，強化規劃急迫性。</p>
-                        <span class="text-white text-xs md:text-sm font-bold flex items-center">
-                            展示圖表 <i class="fa-solid fa-chevron-right text-[10px] ml-1 opacity-70"></i>
-                        </span>
-                    </div>
+                <i class="fa-solid fa-people-roof absolute -bottom-4 -right-2 text-8xl md:text-9xl text-white opacity-20 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
+                
+                <div class="relative z-10">
+                    <h3 class="text-lg md:text-xl font-bold mb-2 text-white">人口結構變遷</h3>
+                    <p class="text-xs md:text-sm text-orange-50 mb-4 leading-relaxed font-light">少子化與高齡化數據展示。</p>
+                    <span class="bg-white/10 px-3 py-1.5 rounded-lg text-xs backdrop-blur-md border border-white/10">
+                        開啟圖表
+                    </span>
                 </div>
             </a>
 
@@ -161,6 +189,62 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        async function fetchBotRate() {
+            const rateElement = document.getElementById('live-rate');
+            const timeElement = document.getElementById('update-time');
+            
+            try {
+                // 技巧：使用 allorigins 作為 CORS Proxy 來讀取台銀的 CSV
+                // 加上 timestamp 防止快取，確保拿到最新資料
+                const botCsvUrl = 'https://rate.bot.com.tw/xrt/flcsv/0/day';
+                const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(botCsvUrl)}&t=${Date.now()}`;
+                
+                const response = await fetch(proxyUrl);
+                
+                if (!response.ok) throw new Error('Network response was not ok');
+                
+                const csvText = await response.text();
+                
+                // 解析 CSV (台銀格式: 幣別,匯率...)
+                // USD 通常在前面幾行。CSV 格式: 幣別, 現金買入, 現金賣出, ...
+                const lines = csvText.split('\n');
+                let usdRate = null;
+                
+                for (let line of lines) {
+                    if (line.includes('USD') && line.includes('美金')) {
+                        const columns = line.split(',');
+                        // 欄位索引：0=幣別, 1=現金買入, 2=現金賣出 (根據台銀CSV結構)
+                        usdRate = columns[2]; 
+                        break;
+                    }
+                }
+
+                if (usdRate) {
+                    rateElement.innerText = parseFloat(usdRate).toFixed(2);
+                    rateElement.classList.add('live-update'); // 加入閃爍特效
+                    
+                    // 取得當前時間
+                    const now = new Date();
+                    const timeString = now.getHours().toString().padStart(2, '0') + ':' + 
+                                     now.getMinutes().toString().padStart(2, '0');
+                    timeElement.innerHTML = `<i class="fa-solid fa-check-circle mr-1"></i> 已更新: ${timeString}`;
+                } else {
+                    throw new Error('USD not found');
+                }
+                
+            } catch (error) {
+                console.error('Fetch error:', error);
+                rateElement.innerText = "點擊查詢";
+                rateElement.style.fontSize = "1.5rem"; // 錯誤時縮小字體
+                timeElement.innerHTML = `<i class="fa-solid fa-triangle-exclamation mr-1"></i> 無法自動載入，請點擊卡片`;
+            }
+        }
+
+        // 頁面載入後執行
+        window.addEventListener('load', fetchBotRate);
+    </script>
 
 </body>
 </html>

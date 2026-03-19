@@ -1,3 +1,16 @@
+這是一個非常棒的升級！加入「NBS 需求分析」與「遺產稅試算」後，這個數位工具箱的戰力可說是完全成形了。
+
+既然您強調 **NBS 最重要且必須擺在最前面**，並且要求 **高質感的頁面**，我為您重新設計了被稱為 **「1-2-3 旗艦級儀表板 (Flagship Dashboard)」** 的網格佈局：
+
+1.  **第一排 (1 張卡片 - 霸王級寬度)**：**NBS 需求分析** 佔據 100% 寬度，採用極具質感的「皇家深紫 (Royal Purple)」漸層，呈現其作為最核心武器的尊榮感。
+2.  **第二排 (2 張卡片 - 核心主力)**：**退休實境** 與 **遺產稅試算** 各佔 50% 寬度，分立左右，作為高資產與退休規劃的兩大支柱。
+3.  **第三排 (3 張卡片 - 專業輔助)**：**美元匯率**、**RBC**、**人口結構** 各佔 33% 寬度，提供堅實的客觀數據輔助。
+
+所有的上方小標籤都已為您去除，版面極度乾淨，並且物理級強制確保了背景圖示的顯示與手機版標題的不換行。
+
+請複製以下最終完整程式碼：
+
+```html
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -73,71 +86,118 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-6">
 
+            <a href="https://kuantahung.github.io/NBS/" target="_blank" 
+               class="tool-card col-span-1 md:col-span-2 lg:col-span-12 group relative overflow-hidden rounded-2xl p-6 md:p-10 shadow-lg flex flex-col justify-between min-h-[220px] md:min-h-[260px]"
+               style="background: linear-gradient(135deg, #4c1d95 0%, #312e81 100%); color: white;">
+                
+                <i class="fa-regular fa-compass absolute -bottom-10 -right-6 text-9xl md:text-[14rem] text-white opacity-20 group-hover:scale-110 transition-transform duration-700 z-0 bg-icon"></i>
+                
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3 text-white tracking-wide">NBS 需求分析系統</h2>
+                    <p class="text-indigo-100 text-sm md:text-xl max-w-3xl leading-relaxed font-light">
+                        保險顧問的終極導航。系統化盤點客戶生涯風險與財務缺口，以數據驅動專業，量身打造無懈可擊的專屬保險藍圖。
+                    </p>
+                </div>
+                
+                <div class="relative z-10 mt-8 flex items-center text-white font-bold text-sm md:text-lg">
+                    <span class="bg-white/20 px-5 py-2 rounded-full backdrop-blur-md border border-white/20 group-hover:bg-white/30 transition-colors">
+                        啟動 NBS 分析 <i class="fa-solid fa-arrow-right-long ml-2"></i>
+                    </span>
+                </div>
+            </a>
+
+
             <a href="https://kuantahung.github.io/Retire-in-Real/" target="_blank" 
-               class="tool-card col-span-1 md:col-span-2 lg:col-span-8 group relative overflow-hidden rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between min-h-[260px] md:min-h-[280px]"
+               class="tool-card col-span-1 md:col-span-1 lg:col-span-6 group relative overflow-hidden rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between min-h-[200px]"
                style="background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%); color: white;">
                 
-                <i class="fa-solid fa-umbrella-beach absolute -bottom-6 -right-6 text-9xl md:text-[10rem] text-white opacity-50 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
+                <i class="fa-solid fa-umbrella-beach absolute -bottom-6 -right-6 text-8xl md:text-9xl text-white opacity-40 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
                 
-                <div class="relative z-10 pt-4">
+                <div class="relative z-10">
                     <h2 class="text-2xl md:text-3xl font-bold mb-3 text-white">Retire in Real 退休實境</h2>
-                    <p class="text-blue-50 text-sm md:text-lg max-w-2xl leading-relaxed font-light">
+                    <p class="text-blue-50 text-sm md:text-base leading-relaxed font-light pr-10">
                         視覺化退休金缺口。讓客戶看見未來的需求，精準規劃理想老後生活。
                     </p>
                 </div>
                 
-                <div class="relative z-10 mt-6 md:mt-8 flex items-center text-white font-bold text-sm md:text-base">
-                    <span>啟動模擬</span>
+                <div class="relative z-10 mt-6 flex items-center text-white font-bold text-sm">
+                    <span>開始試算</span>
                     <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-2 transition-transform"></i>
                 </div>
             </a>
 
-            <a href="https://kuantahung.github.io/USD-exchange-rate-history/" target="_blank" 
-               class="tool-card col-span-1 md:col-span-1 lg:col-span-4 rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between relative overflow-hidden group"
-               style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: white;">
-               
-                <i class="fa-solid fa-chart-line absolute -bottom-6 -right-6 text-8xl md:text-9xl text-white opacity-30 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
+            <a href="https://kuantahung.github.io/Death-Tax/" target="_blank" 
+               class="tool-card col-span-1 md:col-span-1 lg:col-span-6 group relative overflow-hidden rounded-2xl p-6 md:p-8 shadow-md flex flex-col justify-between min-h-[200px]"
+               style="background: linear-gradient(135deg, #9f1239 0%, #881337 100%); color: white;">
                 
-                <div class="relative z-10 pt-4">
+                <i class="fa-solid fa-landmark absolute -bottom-6 -right-4 text-8xl md:text-9xl text-white opacity-20 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
+                
+                <div class="relative z-10">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-3 text-white">遺產稅試算系統</h2>
+                    <p class="text-rose-100 text-sm md:text-base leading-relaxed font-light pr-10">
+                        快速精算稅額與免稅額度，為高資產客戶提供專業的資產傳承與稅務規劃建議。
+                    </p>
+                </div>
+                
+                <div class="relative z-10 mt-6 flex items-center text-white font-bold text-sm">
+                    <span>開始試算</span>
+                    <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-2 transition-transform"></i>
+                </div>
+            </a>
+
+
+            <a href="https://kuantahung.github.io/USD-exchange-rate-history/" target="_blank" 
+               class="tool-card col-span-1 md:col-span-1 lg:col-span-4 rounded-2xl p-6 shadow-md flex flex-col justify-between relative overflow-hidden group"
+               style="background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%); color: white;">
+               
+                <i class="fa-solid fa-chart-line absolute -bottom-6 -right-6 text-7xl md:text-8xl text-white opacity-20 group-hover:scale-110 transition-transform duration-500 z-0 bg-icon"></i>
+                
+                <div class="relative z-10">
                     <h2 class="text-lg md:text-xl font-bold mb-2 text-white">50年匯率走勢</h2>
-                    <p class="text-slate-200 text-xs md:text-sm leading-relaxed font-light mb-4">
+                    <p class="text-blue-100 text-xs md:text-sm leading-relaxed font-light mb-4">
                         用歷史大數據化解客戶對匯差的疑慮。
                     </p>
                 </div>
 
                 <div class="relative z-10 mt-auto">
                      <span class="bg-white/10 px-3 py-1.5 rounded-lg text-xs backdrop-blur-md border border-white/10 group-hover:bg-white/20 transition-colors">
-                        查看歷史圖表
+                        查看圖表 <i class="fa-solid fa-chevron-right text-[10px] ml-1 opacity-70"></i>
                     </span>
                 </div>
             </a>
 
             <a href="https://kuantahung.github.io/RBC-dashboard/" target="_blank" 
-               class="tool-card col-span-1 md:col-span-1 lg:col-span-6 group p-6 rounded-2xl shadow-md relative overflow-hidden flex flex-col justify-between"
-               style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white;">
+               class="tool-card col-span-1 md:col-span-1 lg:col-span-4 group p-6 rounded-2xl shadow-md relative overflow-hidden flex flex-col justify-between"
+               style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: white;">
                
-                <i class="fa-solid fa-shield-halved absolute -bottom-6 -right-4 text-8xl md:text-9xl text-white opacity-20 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
+                <i class="fa-solid fa-shield-halved absolute -bottom-6 -right-4 text-7xl md:text-8xl text-white opacity-20 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
                 
                 <div class="relative z-10">
                     <h3 class="text-lg md:text-xl font-bold mb-2 text-white">RBC 查詢儀表板</h3>
-                    <p class="text-xs md:text-sm text-emerald-50 mb-4 leading-relaxed font-light">各家壽險業資本適足率。</p>
+                    <p class="text-emerald-50 text-xs md:text-sm mb-4 leading-relaxed font-light">掌握各家壽險業資本適足率，嚴格把關。</p>
+                </div>
+
+                <div class="relative z-10 mt-auto">
                     <span class="bg-white/10 px-3 py-1.5 rounded-lg text-xs backdrop-blur-md border border-white/10 group-hover:bg-white/20 transition-colors">
-                        檢視數據
+                        檢視數據 <i class="fa-solid fa-chevron-right text-[10px] ml-1 opacity-70"></i>
                     </span>
                 </div>
             </a>
 
             <a href="https://kuantahung.github.io/demographic-changes/" target="_blank" 
-               class="tool-card col-span-1 md:col-span-1 lg:col-span-6 group p-6 rounded-2xl shadow-md relative overflow-hidden flex flex-col justify-between"
-               style="background: linear-gradient(135deg, #ea580c 0%, #f97316 100%); color: white;">
+               class="tool-card col-span-1 md:col-span-2 lg:col-span-4 group p-6 rounded-2xl shadow-md relative overflow-hidden flex flex-col justify-between"
+               style="background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); color: white;">
                
-                <i class="fa-solid fa-people-roof absolute -bottom-4 -right-2 text-8xl md:text-9xl text-white opacity-20 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
+                <i class="fa-solid fa-people-roof absolute -bottom-4 -right-2 text-7xl md:text-8xl text-white opacity-20 group-hover:scale-105 transition-transform duration-500 z-0 bg-icon"></i>
                 
                 <div class="relative z-10">
                     <h3 class="text-lg md:text-xl font-bold mb-2 text-white">人口結構變遷</h3>
-                    <p class="text-xs md:text-sm text-orange-50 mb-4 leading-relaxed font-light">少子化與高齡化數據展示。</p>
+                    <p class="text-orange-50 text-xs md:text-sm mb-4 leading-relaxed font-light">少子化與高齡化數據，強化規劃急迫性。</p>
+                </div>
+
+                <div class="relative z-10 mt-auto">
                     <span class="bg-white/10 px-3 py-1.5 rounded-lg text-xs backdrop-blur-md border border-white/10 group-hover:bg-white/20 transition-colors">
-                        開啟圖表
+                        開啟圖表 <i class="fa-solid fa-chevron-right text-[10px] ml-1 opacity-70"></i>
                     </span>
                 </div>
             </a>
@@ -155,3 +215,4 @@
 
 </body>
 </html>
+```
